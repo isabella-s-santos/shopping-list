@@ -1,0 +1,11 @@
+.shopping-item-form-container {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.shopping-item-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

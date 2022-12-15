@@ -1,0 +1,28 @@
+<div class="item-width">
+    <mat-expansion-panel hideToggle *ngIf="item">
+        <mat-expansion-panel-header>
+            <mat-panel-title [ngClass]="{ 'bought' : item.status }">
+                <mat-checkbox [checked]="item.status" (change)="changeStatus()"></mat-checkbox>
+                {{ item.name }}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ul class="shopping-list-item">
+            <li *ngIf="item.measurementUnit">Unidade de medida: {{ item.measurementUnit }}</li>
+            <li *ngIf="item.quantity">Quantidade: {{ item.quantity }}</li>
+            <li *ngIf="item.price">Preço: {{ item.price | currency: "BRL" }}</li>
+            <li *ngIf="item.date">Data da compra: {{ item.date | date: "dd/MM/yyyy" }}</li>
+            <li>Status: {{ item.status | status }}</li>
+        </ul>
+
+        <div class="shopping-item-component-buttons">
+            <button mat-stroked-button (click)="openDialog()">Editar</button>
+            <button mat-stroked-button (click)="deleteShoppingItem()">Remover</button>
+        </div>
+        
+        <ng-template #dialogTemplate>
+            <app-dialog>
+                <app-shopping-item-form requestType="update" [newItem]="item"></app-shopping-item-form>
+            </app-dialog>
+        </ng-template>
+    </mat-expansion-panel>
+</div>

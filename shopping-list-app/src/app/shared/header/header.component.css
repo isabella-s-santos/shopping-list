@@ -1,0 +1,13 @@
+.mat-toolbar-single-row {
+    justify-content: space-between;
+}
+
+.active {
+    color: white !important;
+    background-color: #ff4081;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}

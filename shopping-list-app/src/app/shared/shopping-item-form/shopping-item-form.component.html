@@ -1,0 +1,32 @@
+<div class="shopping-item-form-container">
+    <form class="shopping-item-form" *ngIf="itemForm" [formGroup]="itemForm" (ngSubmit)="onSubmitForm()">
+        <mat-form-field appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="name">
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Unidade de medida</mat-label>
+            <input matInput formControlName="measurementUnit">
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Quantidade</mat-label>
+            <input matInput formControlName="quantity">
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+            <mat-label>Preço</mat-label>
+            <input matInput formControlName="price">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Data prevista de compra</mat-label>
+            <input matInput formControlName="date" [matDatepicker]="picker" [disabled]="true" (click)="picker.open()">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <button mat-stroked-button type="submit">{{ requestType == 'post' ? "Adicionar item" : "Atualizar item" }}</button>
+    </form>
+</div>

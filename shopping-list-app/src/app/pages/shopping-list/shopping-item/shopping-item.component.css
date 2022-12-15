@@ -1,0 +1,16 @@
+.item-width {
+    min-width: 600px;
+}
+
+.bought {
+    text-decoration: line-through;
+}
+
+.shopping-list-item {
+    list-style: none;
+}
+
+.shopping-item-component-buttons {
+    display: flex;
+    gap: 10px;
+}
